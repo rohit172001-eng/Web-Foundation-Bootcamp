@@ -1,0 +1,122 @@
+{
+  "window.zoomLevel": 0,
+  "breadcrumbs.enabled": true,
+
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorCustomizations": {
+    "window.activeBorder": "#0078D7",
+    "window.inactiveBorder": "#000000",
+    "tab.activeBorder": "#3399cc",
+    "tab.activeModifiedBorder": "#d10404",
+    "editor.lineHighlightBorder": "#1e1e1e"
+  },
+
+  "files.defaultLanguage": "javascript",
+  "files.autoSave": "off",
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": false,
+  "editor.renderWhitespace": "all",
+  "editor.multiCursorModifier": "alt",
+  "editor.renderControlCharacters": true,
+  "editor.linkedEditing": false,
+  "editor.columnSelection": false,
+  "editor.padding.top": 20,
+  "editor.padding.bottom": 10,
+
+  "trailing-spaces.trimOnSave": true,
+
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+
+  "emmet.triggerExpansionOnTab": true,
+
+  "html.format.wrapAttributes": "aligned-multiple",
+
+  "liveServer.settings.wait": 500,
+  "liveServer.settings.port": 0,
+  "liveServer.settings.fullReload": true,
+  "liveServer.settings.NoBrowser": false,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.ts",
+    "**/*.json"
+  ],
+
+  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.tags": [
+    "BUG:", "bug:",
+    "CHECK:", "check:",
+    "FIX:", "fix:",
+    "FIXIT:", "fixit:",
+    "FIXME:", "fixme:",
+    "FIXED:", "fixed:",
+    "TODO:", "todo:",
+    "INFO:", "info:",
+    "DONE:", "done:",
+    "KR:", "kr:"],
+  "todo-tree.general.tagGroups": {
+    "BUG": ["BUG:", "bug:"],
+    "FIXME": ["FIX:", "fix:", "FIXIT:", "fixit:", "FIXME:", "fixme:"],
+    "TODO": ["TODO:", "todo:", "CHECK:", "check:"],
+    "INFO": ["INFO:", "info:", "KR:"],
+    "DONE": ["DONE:", "done:", "FIXED:", "fixed:"]
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "type": "text-and-comment",
+    "background": "#FF8E00",
+    "foreground": "#ccc",
+    "opacity": 40,
+    "fontStyle": "italic",
+    "fontWeight": "bold",
+    "iconColour": "yellow",
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "icon": "bug",
+      "iconColour": "red"
+    },
+    "FIXME": {
+      "icon": "flame",
+      "iconColour": "#DD5145"
+    },
+    "TODO": {
+      "iconColour": "yellow"
+    },
+    "INFO": {
+      "icon": "info",
+      "iconColour": "#007ACC"
+    },
+    "DONE": {
+      "iconColour": "green"
+    }
+  }
+
+
+}
