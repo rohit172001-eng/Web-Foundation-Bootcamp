@@ -1,0 +1,34 @@
+  /* Class Name, css selector*/
+  .pg-title{
+    color:red;
+    font-size: 60px;
+  }
+  /* Only for h2 child in a section  at any level*/
+  p h2{
+    color:blue;
+    font-size: 16px;
+  }
+  section>h2{
+    color:blue;
+    font-size: 16px;
+  }
+/* Immediate section direct child */
+  section>h2{
+
+  }
+
+  li{
+    color: rgb(0, 200, 255);
+  }
+
+  li:hover{
+    color: red;
+  }
+
+
+  /* ID  */
+  #btnSave {
+    background-color: gray;
+    color:orange;
+  }
+
