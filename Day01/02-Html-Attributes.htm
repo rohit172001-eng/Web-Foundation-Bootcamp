@@ -71,11 +71,14 @@
   <form >
    <div>
     <label for="userName">Name</label>
-    <input type="text" name="" id="userName" placeholder="Enter Name"><br>
+    <input type="text" name="" id="userName" maxlength="10" minlength="2" placeholder="Enter Name" disabled><br>
    </div>
 
    <div>
-    <input id="userEmail" type="email" title="Tool tip" placeholder="Enter your email" value="rohit@oracle.com">
+    <input type="number" name="price" id="price" min="1" max="10" required>
+   </div>
+   <div>
+    <input id="userEmail" type="email" title="Tool tip" placeholder="Enter your email" value="rohit@oracle.com" readonly>
    </div>
     <input type="password" name="" id=""><br>
     <input type="hidden" name="" id=""><br>
@@ -100,15 +103,24 @@
     <input type="range" name="" id=""><br>
 <hr>
 <textarea name="" id="" cols="80" rows="10"></textarea>
-    <select name="" id="">
+    <select name="country" size="5" multiple>
       <option value="">Select Country</option>
       <option value="" selected>India</option>
+      <option value="" selected>Russia</option>
+      <option value="" selected>France</option>
       <option value="">USA</option>
     </select>
+    <button>Submit</button>
   </form>
 
-  <a href="https://google.com">Google</a>
+  <a href="https://google.com" target="_blank" rel="noopener noreferer">Google</a>
+  <div>
+    <a href="about.html" target="framex">About</a>
+    <a href="home.html" target="framex">Home</a>
+  </div>
+  <iframe name="framex" src="" frameborder="0"></iframe>
   <button>Save</button>
+  <button disabled>Save All</button>
 
   <h1>&copy;</h1>
 </body>

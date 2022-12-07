@@ -1,0 +1,121 @@
+/* For home page */
+.bg-image{
+  height: 100vh;
+  background: url('images/wallpaper1.jpg');
+  background-size: cover;
+  position: relative;
+}
+
+.home-title{
+  font-size: 4.5rem;
+}
+
+.home-desc{
+  font-size: 2rem;
+}
+
+.home-text{
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+
+/* For about page */
+.image-about-page{
+  width: 80%;
+  border-radius: 100%;
+
+}
+
+/* for projects page */
+.experience-text.card{
+  height: 280px;
+  cursor: pointer;
+  /* Changes Cursor to pointer from normal */
+}
+
+.experience-icon{
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.card:hover .experience-icon{
+  color: #008000;
+}
+
+.experience-text:hover{
+  border: 1px solid #008000;
+}
+
+.projects-text:hover{
+  border: 1px solid #008000;
+}
+
+.project-image{
+  width: 100%;
+}
+
+/* bg color of nav bar */
+.navbar-scroll.navbar-dark {
+  background-color: rgb(5, 5, 5);
+}
+
+.navbar-mystyle{
+  color: black;
+  font-size:25px;
+}
+/* icons styling */
+
+.social-icons{
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.fa-linkedin:hover, .fa-github:hover{
+  color: #008000;
+}
+
+.fab{
+  color: black;
+}
+
+/* Footer Styling */
+#footer{
+  background-color: rgb(245, 244, 244);
+  text-align:center;
+}
+
+/* To increase spacing between sections, because of navbar titles are not visible */
+ #projects, #experience{
+  margin-top: 4rem;
+  padding-top: 4rem;
+ }
+
+ #about{
+  margin-top: 1rem;
+  padding-top: 1rem;
+ }
+ /* For formatting tables */
+ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
