@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Self Study</title>
+</head>
+<body>
+  <h1>Self Study</h1>
+
+  <h2>String Properties and Methods | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="content-frame" rel="noopener noreferrer">MDN</a></h2>
+  <ul>
+    <li>length - str.length</li>
+    <li>-</li>
+    <li>startsWith - startsWith(searchString, position)</li>
+    <li>endsWith - endsWith(searchString, endPosition)</li>
+    <li>includes - includes(searchString, position)</li>
+    <li>-</li>
+    <li>indexOf - indexOf(searchString, position)
+    </li>
+    <li>lastIndexOf - lastIndexOf(searchString, position)
+    </li>
+    <li>-</li>
+    <li>match</li>
+    <li>-</li>
+    <li>padStart - padStart(targetLength, padString)
+    </li>
+    <li>padEnd - padEnd(targetLength, padString)
+    </li>
+    <li>-</li>
+    <li>replace</li>
+    <li>-</li>
+    <li>split</li>
+    <li>substring</li>
+    <li>toLowerCase</li>
+    <li>toUpperCase</li>
+    <li>trim</li>
+    <li>trimStart</li>
+    <li>trimEnd</li>
+  </ul>
+  <hr>
+
+  <h2>Array | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">MDN</a></h2>
+  <ul>
+    <li>length - </li>
+    <li>-</li>
+    <li>isArray</li>
+    <li>-</li>
+    <li>keys</li>
+    <li>-</li>
+    <li>from</li>
+    <li>entries</li>
+    <li>-</li>
+    <li>forEach</li>
+    <li>some</li>
+    <li>every</li>
+    <li>filter</li>
+    <li>reduce</li>
+    <li>reduceRight</li>
+    <li>map</li>
+    <li>-</li>
+    <li>find</li>
+    <li>findIndex</li>
+    <li>indexOf</li>
+    <li>lastIndexOf</li>
+    <li>includes</li>
+    <li>-</li>
+    <li>concat</li>
+    <li>join</li>
+    <li>-</li>
+    <li>pop</li>
+    <li>push</li>
+    <li>shift</li>
+    <li>unshift</li>
+    <li>-</li>
+    <li>sort</li>
+    <li>reverse</li>
+    <li>-</li>
+    <li>slice</li>
+    <li>splice</li>
+  </ul>
+  <hr>
+
+  <h2>Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener noreferrer">MDN</a></h2>
+  <ul>
+    <li>hasOwnProperty</li>
+    <li>keys</li>
+    <li>-</li>
+    <li>assign</li>
+    <li>entries</li>
+    <li>-</li>
+    <li>defineProperty</li>
+    <li>defineProperties</li>
+  </ul>
+
+  <script>
+    const str = 'Life, the universe and everything. Answer:';
+    const str1 = "😀";
+    // One special feature of the template literal feature is the ability to include expressions and variables within a string. Instead of having to use concatenation, we can use the ${} syntax to insert a variable.
+    console.log(`${str} ${str.length}`);
+    console.log(`${str1} ${str1.length}`);
+
+    console.log(str.startsWith("Life"));
+    console.log(str.startsWith("lef"));
+    //from pos 6 checks it starts with the
+    console.log(str.startsWith("the",6));
+    console.log(str.endsWith("wer:"));
+    console.log(str.endsWith("thing",33));
+    console.log(str.includes("and"));
+    //starts search from pos 5
+    console.log(str.includes("life",5));
+
+    //The indexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the first occurrence of the specified substring. Given a second argument: a number, the method returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
+    //searches from position
+    console.log(str.indexOf("i"));
+    console.log(str.indexOf("i",2));
+    console.log(str.indexOf("i",31));
+    //Searching for an empty search string produces strange results. With no second argument, or with a second argument whose value is less than the calling string's length, the return value is the same as the value of the second argument:
+    "hello world".indexOf("", 3); // returns 3
+    // However, with a second argument whose value is greater than or equal to the string's length, the return value is the string's length:
+    "hello world".indexOf("", 13); // returns 11
+    //In the former instance, the method behaves as if it found an empty string just after the position specified in the second argument. In the latter instance, the method behaves as if it found an empty string at the end of the calling string.
+
+    //The lastIndexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the last occurrence of the specified substring. Given a second argument: a number, the method returns the last occurrence of the specified substring at an index less than or equal to the specified number.
+
+
+    //The match() method retrieves the result of matching a string against a regular expression.
+
+    //The padStart() method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
+    const str2 = '5';
+    console.log(str2.padStart(2, '0'));
+
+    //The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.
+
+    //array
+    //slice to change contents of array by rem, rep ele
+    //The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
+    //sort, reverse
+    //The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+    //The push() method adds one or more elements to the end of an array and returns the new length of the array.
+    //The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+    //The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+    //The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+    //The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+    //The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
+    //The findIndex() method returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.
+    //The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+    //The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+    //The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+    //The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+    //The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+    //The forEach() method executes a provided function once for each array element.
+
+    //The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+
+    //The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //object
+    //The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it).
+    // `hasOwnProperty` will only return true for direct properties:
+    // The `in` operator will return true for direct or inherited properties:
+
+    // The Object.keys() method returns an array of a given object's own enumerable string-keyed property names.
+    // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+    //The Object.entries() method returns an array of a given object's own enumerable string-keyed property key-value pairs.
+    //The static method Object.defineProperty() defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+    //The Object.defineProperties() method defines new or modifies existing properties directly on an object, returning the object.
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

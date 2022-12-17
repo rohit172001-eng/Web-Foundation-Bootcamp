@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Js DataType - object</title>
+</head>
+<body>
+  <h1>Js DataType - object</h1>
+
+  <script>
+    // class-free objects
+
+    var obj1 = {
+      "age": 25,
+      "name": "Javascript",
+      "active": true
+    };
+    console.log('🚀 ~ obj1', obj1);
+
+    var obj2 = {
+      'my age': 25,
+      'my-name': 'Javascript',
+      'active': true
+    };
+    console.log('🚀 ~ obj2', obj2);
+
+    var obj3 = {
+      age : 25,
+      name: 'Javascript',
+      active: true
+    }
+    console.log('🚀 ~ obj3', obj3);
+
+    var age = 25;
+    var fullName = 'Javascript';
+    var isActive = true;
+
+    // var obj4a = {
+    //   age: age,
+    //   fullName: fullName,
+    //   isActive: isActive
+    // }
+    var obj4 = {age, fullName, isActive};
+    console.log('🚀 ~ obj4', obj4);
+
+    obj1.newProp = 'New Prope';
+    obj1['newproperty'] = 'Somethign New';
+
+    // accessing object properties
+
+    // using dot
+    console.log('fullName', obj4.fullName);
+
+    // using []
+    console.log('fullName', obj4['fullName']);
+
+    for(var key in obj4) {
+      console.log('key', key, obj4[key]);
+    }
+
+  </script>
+</body>
+</html>

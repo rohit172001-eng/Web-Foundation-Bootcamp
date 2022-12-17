@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>assign06-events</title>
+  <style>
+    table{
+      width: 100%;
+    }
+    th, td {
+            text-align: left;
+            padding: 8px;
+        }
+    tr:nth-child(odd) {
+        background-color: lightyellow;
+    }
+    /* tr:hover {
+  background-color: rgba(255, 255, 0, 0.333);
+    } */
+  </style>
+</head>
+<body>
+  <h2>assign06-events</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Qualification</th>
+        <th>Institution</th>
+        <th>Year</th>
+        <th><a id="link" href="">Certificates</a></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="table-row">1</td>
+          <td class="table-row">B.Tech</td>
+          <td class="table-row">Vasavi College of Engineering</td>
+          <td class="table-row">2018-2022</td>
+          <td class="table-row"><button id="btn">View</button></td>
+        </tr>
+      <tr class="row">
+        <td class="table-row">2</td>
+        <td class="table-row">Intermediate</td>
+        <td class="table-row">Sri Gayathri Jr. College</td>
+        <td class="table-row">2016-2018</td>
+        <td class="table-row"><button id="btn">View</button></td>
+      </tr>
+      <tr class="row">
+        <td class="table-row">3</td>
+        <td class="table-row">Schooling</td>
+        <td class="table-row">Cambridge High School</td>
+        <td class="table-row">2006-2016</td>
+        <td class="table-row"><button id="btn">View</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script> -->
+  <script>
+    // var etr = document.getElementsByTagName('tr');
+    // var etr=document.getElementById('row');
+    var doc = document;
+    doc.addEventListener('click',handleDoc);
+    doc.addEventListener('mouseover',handleMouseOver);
+    // doc.addEventListener('mouseover',handleDoc);
+    // etr.addEventListener('mouseover',handleMouseHover);
+    var elLink = document.getElementById('link');
+    elLink.addEventListener('click', handleClickLink);
+    function handleDoc (e) {
+      switch (true) {
+        case (e.target.matches('.table-row')): handleRowClick(e);break;
+        case (e.target.matches('#btn')): handleBtnClick(e);break;
+
+      }
+    }
+    function handleRowClick(e) {
+      console.log('Row clicked');
+    }
+    function handleBtnClick (e) {
+      console.log('Btn Clicked');
+    }
+    function handleMouseOver (e) {
+
+      if (e.target.matches('.row'))
+      {
+        e.target.style.backgroundColor="gray";
+        setTimeout(() => {
+          e.target.style.backgroundColor = "";
+        }, 500);
+      }
+    }
+    function handleClickLink (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      console.log('target', e.target);
+    }
+  </script>
+</body>
+</html>

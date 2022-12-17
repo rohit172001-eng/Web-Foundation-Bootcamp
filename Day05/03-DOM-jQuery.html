@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>DOM + jQuery</title>
+</head>
+<body>
+  <h1 id="pgTitle" style="color: red; background-color: gray;">DOM + jQuery</h1>
+  <h2>SubTitle</h2>
+  <div>
+    <section>
+      <header>
+        <h2>section title</h2>
+      </header>
+      <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tenetur tempora! Blanditiis alias obcaecati voluptatibus minima porro dolorem id totam modi aperiam necessitatibus dicta cupiditate sunt, amet, veniam rem vel.
+      </main>
+    </section>
+
+    <section>
+      <header>
+        <h2>section title</h2>
+      </header>
+      <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, tenetur tempora! Blanditiis alias obcaecati voluptatibus minima porro dolorem id totam modi aperiam necessitatibus dicta cupiditate sunt, amet, veniam rem vel.
+      </main>
+    </section>
+  </div>
+
+  <ul>
+    <li class="menu-item">menu item</li>
+    <li class="menu-item">menu item</li>
+    <li class="menu-item">menu item</li>
+    <li class="menu-item">menu item</li>
+    <li class="menu-item">menu item</li>
+  </ul>
+
+  <form action="">
+    <div>
+      <input type="text" name="userName" id="userName" value="" placeholder="Enter your name">
+    </div>
+    <footer>
+      <button id="btn-Save">Save</button>
+    </footer>
+  </form>
+  <!-- jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript. -->
+  <!-- cdn-jq-full <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script> -->
+  <!-- https://jquery.com/download/ uncompressed -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<!-- <script src="xlib/jquery-3.6.1.js"></script> -->
+  <script>
+    // console.log(document.getElementById('pgTitle'),$('#pgTitle')[0] );
+    //jq - simplified fetching elements
+    // document.getElementsByTagName('h2');
+    // $('h2');
+
+    // document.getElementsByClassName('menu-item');
+    // $('.menu-item')
+
+    console.log($('#pgTitle').html()); //reads curr inner HTML
+    $('#pgTitle').html('<i>Wow! It works!!!')
+
+    var menus = document.getElementsByClassName('menu-item');
+    //actually we need to loop to change
+
+    $('.menu-item').css('color','red');
+    $('.menu-item').css('background-color','gray');
+
+    $('.menu-item').css(
+      {
+        color: 'green',
+        backgroundColor: 'blue'
+      }
+    );
+
+    //touches h2 within div
+    //jquery comes with a query language, simplified it
+      $('div h2').css('color','orange');
+      $('input:text').val('JavaScript');
+
+      //jq impact
+      document.getElementById('pgTitle');
+      $('#pgTitle');
+      document.querySelector('#pgTitle');
+
+      document.getElementsByClassName('menu-items');
+      $('.menu-item');
+      document.querySelectorAll('.menu-item');
+
+      document.getElementsByTagName('h2');
+      $('h2');
+      document.querySelectorAll('h2');
+
+
+</script>
+</body>
+</html>

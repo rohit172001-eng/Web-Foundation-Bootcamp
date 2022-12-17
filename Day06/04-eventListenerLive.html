@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>event listener (live)</title>
+
+  <style>
+    .menu-item {
+      cursor: pointer;
+      margin: 5px;
+      border: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>event listener (live) </h1>
+
+  <ul id="menu">
+    <li class="menu-item">menu item - 1</li>
+    <li class="menu-item">menu item - 2</li>
+  </ul>
+
+  <button id="btnAddMenuItem">Add Menu</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  <script type="-">
+    var menuItems = document.querySelectorAll('.menu-item');
+    console.log('🚀 ~ menuItems', menuItems);
+
+    menuItems.forEach( menuItem => {
+      menuItem.addEventListener('click', onMenuClick)
+    });
+
+    function onMenuClick (e) {
+      console.log( e.target.innerHTML );
+    }
+
+    $('#btnAddMenuItem').on('click', addMenuItem);
+
+    function addMenuItem () {
+      var curMenuLen = $('#menu li').length;
+
+      var newMenuItem = $('<li class="menu-item">menu item - '+(curMenuLen+1)+'</li>');
+      newMenuItem.on('click', onMenuClick);
+
+      $('#menu').append(newMenuItem);
+    }
+
+  </script>
+
+  <script>
+    var doc = document;
+
+    doc.addEventListener('click', handleClickOnDoc);
+
+    function handleClickOnDoc (e){
+
+      // if (e.target.matches('.menu-item')) {
+      //   // console.log('target', e.target);
+      //   onMenuClick(e);
+      // }
+
+      switch (true) {
+        case (e.target.matches('.menu-item')): onMenuClick(e); break;
+        case (e.target.matches('#btnAddMenuItem')): addMenuItem(); break;
+      }
+
+    }
+
+    // Add New Menu Item
+    // $('#btnAddMenuItem').on('click', addMenuItem);
+
+    function addMenuItem () {
+      var curMenuLen = $('#menu li').length;
+      var newMenuItem = '<li class="menu-item">menu item - '+(curMenuLen+1)+'</li>';
+      $('#menu').append(newMenuItem);
+    }
+
+    function onMenuClick (e) {
+      console.log( e.target.innerHTML );
+    }
+
+  </script>
+
+</body>
+</html>

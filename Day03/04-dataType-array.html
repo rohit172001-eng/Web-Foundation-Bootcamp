@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Js DataType - array</title>
+</head>
+<body>
+  <h1>Js DataType - array</h1>
+
+  <script>
+
+    var vArr = [10, 'Javascript', true, undefined, null];
+    console.log('🚀 ~ vArr', vArr);
+    console.log('🚀 ~ vArr', vArr.length);
+    console.log('1st element', vArr[0]);
+
+    vArr[7] = 'Something new';
+
+    vArr['myName'] = 'Javascript';
+
+    console.log('🚀 ~ vArr', vArr.length);
+
+    for(var i=0; i < vArr.length; i++){
+      console.log('i:', i, 'value:', vArr[i]);
+    }
+
+    // after 2015
+    for(var item of vArr) {
+      console.log('item', item);
+    }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Event Handle</title>
+
+  <style>
+    #outer {
+      width: 300px;
+      height: 100px;
+      padding: 20px;
+      background-color: green;
+      text-align: center;
+    }
+
+    #inner {
+      width: 200px;
+      height: 50px;
+      padding: 20px;
+      background-color: yellow;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Event Handle</h1>
+
+  <div id="outer" onclick="handleClickOnOuter()">
+    <div id="inner" onclick="handleClickOnInner()">
+      <button id="btn" onclick="handle1ClickOnBtn();handle2ClickOnBtn();">Click Me</button>
+      <br/><br/>
+      <a id="link" href="//google.com" target="_blank" rel="noopener noreferrer">Click Me</a>
+    </div>
+  </div>
+
+  <script>
+
+    function handle1ClickOnBtn () {
+      console.log('fn1: Button has been clicked!');
+    }
+    function handle2ClickOnBtn () {
+      console.log('fn2: Button has been clicked!');
+    }
+
+    function handleClickOnOuter () {
+      console.log('Outer div has been clicked!');
+    }
+
+    function handleClickOnInner () {
+      console.log('Inner div has been clicked!');
+    }
+
+  </script>
+</body>
+</html>

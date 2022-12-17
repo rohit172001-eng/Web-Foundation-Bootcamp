@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>DOM</title>
+
+  <style>
+    .pg-title {
+      font-size: 72px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="pgTitle" style="color: red; background-color: gray;">DOM</h1>
+
+  <div>
+    <section>
+      <header>
+        <h2 id="titleSec1">Section Title</h2>
+      </header>
+      <main>
+        <span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Modi, nisi ducimus! Deserunt minus fugit, adipisci expedita earum illo possimus amet, voluptatem dolorum aperiam neque maxime culpa inventore ducimus exercitationem voluptatibus.
+      </main>
+    </section>
+
+    <section>
+      <header>
+        <h2>Section Title</h2>
+      </header>
+      <main>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, nisi ducimus! Deserunt minus fugit, adipisci expedita earum illo possimus amet, voluptatem dolorum aperiam neque maxime culpa inventore ducimus exercitationem voluptatibus.
+      </main>
+    </section>
+  </div>
+
+  <div>
+    <ul>
+      <li class="menu-item">menu item</li>
+      <li class="menu-item">menu item</li>
+      <li class="menu-item">menu item</li>
+      <li class="menu-item">menu item</li>
+      <li class="menu-item">menu item</li>
+    </ul>
+  </div>
+
+  <form>
+    <div>
+      <input type="text" name="userName" id="userName" value="" placeholder="Enter your name">
+    </div>
+
+    <footer>
+      <button id="btn-Save">Save</button>
+    </footer>
+  </form>
+
+  <script>
+    console.log('window', window);
+
+    // var doc = window.document;
+    // var doc = document;
+    // var body = doc.body;
+
+    // DOM Element query
+    var pgTitle = document.getElementById('pgTitle');
+    console.log('🚀 ~ pgTitle', pgTitle);
+
+    var btnSave = document.getElementById('btn-Save');
+    console.log('🚀 ~ btnSave', btnSave);
+
+    var userName = document.getElementsByTagName('input')[0];
+    console.log('🚀 ~ userName', userName);
+
+    var divs = document.getElementsByTagName('div');
+    console.log('🚀 ~ divs', divs);
+
+    var menus = document.getElementsByClassName('menu-item');
+    console.log('🚀 ~ menus', menus);
+
+
+    // DOM Manipulation
+    pgTitle.style.color = 'green';
+    pgTitle.style.backgroundColor = 'black';
+    pgTitle.classList.add('pg-title');
+
+    userName.value = 'Javascript';
+
+    var titleSec1 = document.getElementById('titleSec1');
+    titleSec1.innerHTML = '<strong>DOM</strong> Intro';
+    // titleSec1.innerText = '<strong>DOM</strong> Intro';
+
+    // ([]).slice.call();
+
+    var _$  = document.querySelector.bind(document);
+    var _$$ = document.querySelectorAll.bind();
+
+
+  </script>
+
+</body>
+</html>

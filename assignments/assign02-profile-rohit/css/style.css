@@ -1,7 +1,7 @@
 /* For home page */
 .bg-image{
   height: 100vh;
-  background: url('images/wallpaper1.jpg');
+  background: url('../images/wallpaper1.jpg');
   background-size: cover;
   position: relative;
 }

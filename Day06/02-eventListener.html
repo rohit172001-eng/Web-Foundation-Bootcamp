@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>event Listener</title>
+
+  <style>
+    #outer {
+      width: 300px;
+      height: 100px;
+      padding: 20px;
+      background-color: green;
+      text-align: center;
+    }
+
+    #inner {
+      width: 200px;
+      height: 50px;
+      padding: 20px;
+      background-color: yellow;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>event Listener</h1>
+
+  <div id="outer">
+    <div id="inner">
+      <button id="btn">Click Me</button>
+      <br/><br/>
+      <a id="link" href="//google.com" target="_blank" rel="noopener noreferrer">Click Me</a>
+    </div>
+  </div>
+
+  <!-- <form onsubmit="return false;">
+    Search:<input type="text">
+    <button type="button">Submit</button>
+  </form> -->
+  <form id="searchForm">
+    Search:<input type="text">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  <script>
+
+    var elBtn = document.getElementById('btn');
+    var elInn = document.getElementById('inner');
+    var elOut = document.getElementById('outer');
+    var elLink = document.getElementById('link');
+    var elSearchForm = document.getElementById('searchForm');
+
+    elBtn.addEventListener('click', handle1ClickBtn);
+    elBtn.addEventListener('click', handle2ClickBtn);
+
+    // elBtn.removeEventListener('click', handle2ClickBtn);
+
+
+    elInn.addEventListener('click', handleClickInner);
+    elOut.addEventListener('click', handleClickOuter);
+
+    elLink.addEventListener('click', handleClickLink)
+
+    elSearchForm.addEventListener('submit', handleSubmitForm);
+
+
+    // $('#btn').on('click', handle1ClickBtn)
+    // $('#btn').on('click', handle2ClickBtn)
+
+    // $('#btn')
+    //   .on('click', handle1ClickBtn)
+    //   .on('click', handle2ClickBtn);
+
+    // $('#btn').off('click', handle1ClickBtn)
+
+    // functions
+    function handle1ClickBtn (e) {
+      // console.log('current event', e);
+      // console.log('current event', window.event);
+      // console.log('current event', event);
+
+      //stop propogation allows other handlers on the same element to be executed, prevent handlers on parent elements from running.
+      // e.stopPropagation();
+      //It will prevents every event from running.
+      e.stopImmediatePropagation();
+
+      console.log('handle1: btn click.');
+
+    }
+    function handle2ClickBtn () {
+      console.log('handle2: btn click.');
+    }
+
+    function handleClickInner () {
+      console.log('handle inner.');
+    }
+    function handleClickOuter () {
+      console.log('handle outer.');
+    }
+
+    function handleClickLink (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      console.log('target', e.target);
+    }
+
+    function handleSubmitForm (e) {
+      console.log('stopped the form submit!');
+      e.preventDefault();
+    }
+
+  </script>
+
+</body>
+</html>

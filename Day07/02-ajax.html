@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>ajax</h1>
+  <button onclick="getData1(true);">get data</button>
+  <button onclick="getData1(false);">get data</button>
+  <button onclick="getDatajqr(true)">get data jquery</button>
+  <button onclick="getDatajqr2(false)">get data jquery2</button>
+  <button onclick="fetchData()">fetch data</button>
+  <button onclick="fetchwrap()">await fetch data</button>
+  <script>
+    var api = 'https://reqres.in/api/users/2';
+    function fetchwrap(){
+      console.log('about to send fetch');
+      fetchDataAwait();
+      console.log('after sending fetch');
+    }
+    async function fetchDataAwait(){
+      console.log('about to send real');
+      var apiData= await fetch(api).then(res=>res.json());
+      console.log('got the data',apiData);
+      console.log('done sending ');
+    }
+    //------------------ fetch ex ----------------------
+    function fetchData(){
+      console.log('feching the data');
+      fetch(api)
+      .then(res=> res.json())
+      .then(onSuccess)
+      .catch(onError);
+    }
+    //---------------------------------
+
+    //the jquerry way-----------------------------------
+    function getDatajqr(async) {
+      console.log('jquery ajax');
+      $.ajax(api, {
+        async: async,
+        success: onSuccess,
+        error: onError
+      });
+      console.log('after sent');
+    }
+
+    function getDatajqr2(async) {
+      $.ajax(api,{
+        async:async
+      })
+        .done(onSuccess)
+        .done(onSuccess2)
+        .fail(onError);
+        console.log('after sent')
+    }
+
+    function onSuccess(data) {
+      console.log('the data is ', data);
+      return data;
+    }
+    function onSuccess2(data) {
+      console.log('the data 2 is ', data);
+    }
+
+    function onError() {
+      console.log('the error ', arguments);
+    }
+
+    //--------------------------------------------------
+
+
+
+    function getData1(async) {
+      console.log('getting data from ...');
+      var req = new XMLHttpRequest();
+      //req.onreadystatechange=function(){
+      //  console.log('changing the state',req);
+      //};
+      req.onload = function () {
+        //console.log('got the data ',req);
+        var resText = req.responseText;
+        var resObject = JSON.parse(resText);
+        console.log('resource object', resObject);
+      };
+      req.open('GET', api,async);//setting the link
+      req.send();//making the call.
+    }
+
+
+  </script>
+</body>
+
+</html>

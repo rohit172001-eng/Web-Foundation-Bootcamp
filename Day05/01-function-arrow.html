@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Function-arrow</title>
+</head>
+<body>
+  <h1>Arrow function</h1>
+  <script>
+    doSomething(1,2,3);
+    //func dec before exec seq
+    function doSomething(arg1,arg2) {
+      console.log('arguments', arguments);
+      //convert array like objects to arrays
+      //var args = Array.from(arguments);
+      //without using fun
+      var args = ([]).slice.call(arguments);
+      console.log(args);
+      return true;
+    }
+
+    var doSomething = function(arg1, arg2){
+      return false;
+    }
+  </script>
+  <script>
+    //arrow func - no need of func keyword, anonymous func - no arguments
+    //this keyword can't be use din arrow functions
+    var doSomethingDifferent = () => {
+     // console.log('arguments', arguments);
+      console.log('doing differently');
+    };
+    doSomethingDifferent();
+
+    // var toUpper = (str) => {
+    //   return str.toUpperCase();
+    // };
+
+    //no need of return statement
+    var toUpper = (str) => str.toUpperCase();
+    var add = (a,b) => a+b;
+    //if more than 1 arg need to have round brackets
+    var square = x => x*x;
+    console.log(toUpper('Javascript'));
+    console.log(add(2,3));
+    console.log(square(5));
+
+    //arrow iife
+    //An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+    (() => {
+      console.log('life');
+    })()
+  </script>
+
+  <script type="-">
+    function Car(name) {
+      this.name = name
+    }
+    var car1=new Car('BMW');
+  </script>
+</body>
+</html>

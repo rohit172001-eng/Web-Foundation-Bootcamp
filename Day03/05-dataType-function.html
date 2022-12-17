@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <title>Js dataType - function</title>
+</head>
+<body>
+
+  <h1>Js dataType - function</h1>
+
+  <script>
+    function doSomething (a, b) {
+      console.log('a,b', a, b);
+
+      console.log('arguments', arguments);
+      console.log('arg3', arguments[2]);
+
+      return a+b;
+    }
+
+    var res1 = doSomething(10, 20);
+    console.log('🚀 ~ res1', res1);
+
+    var res2 = doSomething()
+    console.log('🚀 ~ res2', res2);
+
+    var res3 = doSomething(10, 20, 30, 40)
+    console.log('🚀 ~ res3', res3);
+
+  </script>
+
+  <script>
+    function doSomething (a, b, c) {
+      return a+b+c
+    }
+
+    var res5 = doSomething(10,20)
+    console.log('🚀 ~ res5', res5);
+    var res6 = doSomething(10,20,30)
+    console.log('🚀 ~ res6', res6);
+
+  </script>
+</body>
+</html>
